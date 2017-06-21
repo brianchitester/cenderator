@@ -1,0 +1,146 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>CENDERATOR</title>
+  <meta name="description" content="CENDE BAND NAME GENERATOR">
+
+  <link rel="stylesheet" href="cende.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="flex-container">
+    	<div class="box"> 
+        	<div class="flex-item">
+            <h1>CENDE BAND NAME GENERATOR</h1>
+            <form name="myForm" >
+              <input id="textfield" name="textfield" type="text" placeholder="type a band name" />
+              <input type="button" value="Submit" onclick="return validateForm()">
+              <input type="button" value="Just do it for me!" onclick="return justDoIt()">
+            </form>
+            <h1 class="result"></h1>
+          </div>
+    	</div>
+	</div>
+  <script>
+    $('#textfield').keydown( function( event ) {
+        if ( event.which === 13 ) {
+            // Do something
+            // Disable sending the related form
+            event.preventDefault();
+            validateForm();
+            return false;
+        }
+    });
+
+    var validateForm = function(){
+      var originalBand = $("#textfield").val();
+      doIt(originalBand);
+    }
+
+    var doIt = function(originalBand) {
+      var wordArray = originalBand.split(" ");
+      var longestWord = "";
+      wordArray.forEach(function(word) {
+        if (word.length > longestWord.length) {
+          longestWord = word;
+        }
+      });
+      var newBand = longestWord;
+      while (newBand.length > 5) {
+        newBand = newBand.substring(1, newBand.length - 1);
+      }
+      $(".result").text(newBand);
+    };
+
+    var justDoIt = function() {
+      var min = 0;
+      var max = listOfBands.length;
+      bandName = listOfBands[Math.floor(Math.random() * (max - min) + min)];
+      $("#textfield").val('');
+      $("#textfield").attr("placeholder", bandName);
+      doIt(bandName);
+    };
+
+    var listOfBands = [
+      "The Clash",
+      "Green Day",
+      "Ramones",
+      "The Offspring",
+      "Sex Pistols",
+      "Bad Religion",
+      "blink-182",
+      "NOFX",
+      "Dead Kennedys",
+      "Rise Against",
+      "Misfits",
+      "Sum 41",
+      "Rancid",
+      "Anti-Flag",
+      "Dropkick Murphys",
+      "Iggy Pop",
+      "Screeching Weasel",
+      "Lagwagon",
+      "My Chemical Romance",
+      "Billy Talent",
+      "Propagandhi",
+      "The Bouncing Souls",
+      "Fall Out Boy",
+      "Flogging Molly",
+      "Black Flag",
+      "Pennywise",
+      "The Stooges",
+      "Buzzcocks",
+      "Fugazi",
+      "Gogol Bordello",
+      "The Distillers",
+      "Die Ärzte",
+      "The Exploited",
+      "Alkaline Trio",
+      "The Hives",
+      "Good Charlotte",
+      "Nirvana",
+      "Sublime",
+      "Patti Smith",
+      "Mindless Self Indulgence",
+      "Social Distortion",
+      "Bloodhound Gang",
+      "Against Me!",
+      "Yellowcard",
+      "Millencolin",
+      "Simple Plan",
+      "Bad Brains",
+      "Minor Threat",
+      "The Damned",
+      "Descendents",
+      "The Used",
+      "Die Toten Hosen",
+      "Goldfinger",
+      "Lagwagon",
+      "Operation Ivy",
+      "Refused",
+      "The All-American Rejects",
+      "The Adicts",
+      "Taking Back Sunday",
+      "Less Than Jake",
+      "New Found Glory",
+      "Red Hot Chili Peppers",
+      "The Casualties",
+      "Hüsker Dü",
+      "Pulley",
+      "The Vandals",
+      "Teenage Bottlerocket",
+      "Satanic Surfers",
+      "Bad Religion",
+      "Black Flag",
+      "The Queers",
+      "Masked Intruder",
+      "Operation Ivy",
+      "Jawbreaker",
+      "Circle Jerks"];
+  </script>
+</body>
+</html>

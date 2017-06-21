@@ -1,0 +1,45 @@
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+.flex-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+.box {
+    width: auto;
+    border: 4px solid black;
+    text-align: center;
+}
+.flex-item {
+    padding: 5px;
+    width: 300px;
+    height: 300px;
+    color: black;
+    font-weight: bold;
+    text-align: left;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: black;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: black;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: black;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: black;
+}
