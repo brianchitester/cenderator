@@ -4,6 +4,7 @@ html, body {
 body {
     margin: 0;
     font-family: sans-serif;
+    background-image: url("background.jpg");
 }
 .flex-container {
     height: 100%;
@@ -21,6 +22,7 @@ body {
     width: auto;
     border: 4px solid black;
     text-align: center;
+    background-color: white;
 }
 .flex-item {
     padding: 5px;
